@@ -54,32 +54,32 @@ a {
 
 h1,
 .h1 {
-  font-size: var(--font-size--5xl);
+  font-size: var(--font-size--2xl);
 }
 
 h2,
 .h2 {
-  font-size: var(--font-size--4xl);
+  font-size: var(--font-size--2xl);
 }
 
 h3,
 .h3 {
-  font-size: var(--font-size--3xl);
+  font-size: var(--font-size--xl);
 }
 
 h4,
 .h4 {
-  font-size: var(--font-size--2xl);
+  font-size: var(--font-size--lg);
 }
 
 h5,
 .h5 {
-  font-size: var(--font-size--xl);
+  font-size: var(--font-size--md);
 }
 
 h6,
 .h6 {
-  font-size: var(--font-size--lg);
+  font-size: var(--font-size--base);
 }
 
 {###########################################################################}
@@ -89,25 +89,25 @@ h6,
 /* Form placeholder text */
 
 ::-webkit-input-placeholder {
-  color: var(--color--grey);
+  color: var(--color--grey-light);
 }
 
 ::-moz-placeholder {
-  color: var(--color--grey);
+  color: var(--color--grey-light);
 }
 
 :-ms-input-placeholder {
-  color: var(--color--grey);
+  color: var(--color--grey-light);
 }
 
 ::placeholder {
-  color: var(--color--grey);
+  color: var(--color--grey-light);
 }
 
 /* Inputs - date picker */
 
 .hs-fieldtype-date .input .hs-dateinput:before {
-  color: var(--color--grey);
+  color: var(--color--grey-light);
 }
 
 .fn-date-picker td.is-selected .pika-button {

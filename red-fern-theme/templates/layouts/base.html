@@ -17,6 +17,11 @@
     {{ require_css(get_asset_url("../../css/main.css")) }}
     {{ require_css(get_asset_url("../../css/tailwind/output.css")) }}
 
+    {# Fonts #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     {# This is intended to be used if a template requires template specific style sheets #}
     {% if template_css %}
       {{ require_css(get_asset_url(template_css)) }}
