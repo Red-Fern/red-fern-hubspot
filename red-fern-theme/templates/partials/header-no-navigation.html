@@ -1,8 +1,16 @@
 <!--
   templateType: global_partial
-  label: Header no navigation
+  label: Header
 -->
-<header class="header">
+<header class="header py-lg">
   <div class="content-wrapper">
+    <div class="flex justify-center | lg:justify-start">
+      {% module "header_logo"
+        path="@hubspot/logo"
+        img={
+          "loading": "eager"
+        }
+      %}
+    </div>
   </div>
 </header>

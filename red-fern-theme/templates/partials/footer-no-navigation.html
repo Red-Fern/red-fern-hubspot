@@ -1,8 +1,27 @@
 <!--
   templateType: global_partial
-  label: Footer no navigation
+  label: Footer
 -->
-<footer class="footer">
+<footer class="footer py-lg bg-navy text-grey text-2xs text-center | lg:text-left">
   <div class="content-wrapper">
+    <div class="flex flex-col justify-center items-center gap-xs | lg:flex-row lg:gap-sm">
+      <div class="flex-1 order-last | lg:order-none">
+        {% module "copyright" path="@hubspot/text" value="Copyright © {{ year }} Red-Fern Media Solutions Ltd. All Rights Reserved" label="Copyright" %}
+      </div>
+      
+      {% module "footer_logo"
+        path="@hubspot/logo"
+        img={
+          "loading": "eager"
+        }
+      %}
+
+      <div class="flex-1 flex justify-end">
+        {% module "footer_policy_menu"
+          path="@hubspot/simple_menu"
+          label="Policy Menu"
+        %}
+      </div>
+    </div>
   </div>
 </footer>
