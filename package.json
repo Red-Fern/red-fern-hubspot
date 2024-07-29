@@ -1,0 +1,26 @@
+{
+    "name": "red-fern-hubspot",
+    "description": "Theme and project structure for Red-Fern",
+    "license": "Apache-2.0",
+    "devDependencies": {
+        "@hubspot/prettier-plugin-hubl": "latest",
+        "eslint": "^8.24.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-react": "^7.31.10",
+        "prettier": "^2.7.1",
+        "yarpm": "^1.2.0"
+    },
+    "scripts": {
+        "start": "cd red-fern-project/red-fern-app && npm run start",
+        "lint:js": "eslint . --ext .js,.jsx",
+        "prettier": "prettier . --check",
+        "tailwind": "cd red-fern-theme && npm run production",
+        "watch:hubl": "hs watch red-fern-theme red-fern-theme",
+        "upload:hubl": "hs upload red-fern-theme red-fern-theme",
+        "deploy": "hs project upload red-fern-project"
+    },
+    "dependencies": {},
+    "engines": {
+        "node": ">=16.0.0"
+    }
+}

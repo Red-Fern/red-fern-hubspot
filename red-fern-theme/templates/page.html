@@ -1,0 +1,15 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Page
+  screenshotPath: ../images/template-previews/theme.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "dnd_area"
+    label="Main section",
+    class="body-container body-container--page"
+  %}
+  {% end_dnd_area %}
+{% endblock body %}

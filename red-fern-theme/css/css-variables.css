@@ -1,0 +1,38 @@
+{% import './tools/_macros.css' %}
+
+:root {
+    /* Containers */
+    --container-width: 1600px;
+    
+    /* Colors */
+
+    --color--grey: #cccccc;
+
+    --color--white: #ffffff;
+    --color--black: #000000;
+
+    /* Typography */
+    --font-family--primary: "Hanken Grotesk", "Helvetica", "Arial", sans-serif;;
+
+    /* Clamp values are calculated using https://www.marcbacon.com/tools/clamp-calculator/ with a min viewport of 320px and a max viewport of 1600px */
+    --font-size--xs: 0.688rem; /* 11px */
+    --font-size--sm: 0.813rem; /* 13px */
+    --font-size--base: 1rem; /* 16px */
+    --font-size--md: clamp(1rem, 0.953rem + 0.234vw, 1.188rem); /* 19px/16px */
+    --font-size--lg: clamp(1.188rem, 1.125rem + 0.313vw, 1.438rem); /* 23px/19px */
+    --font-size--xl: clamp(1.438rem, 1.359rem + 0.391vw, 1.75rem); /* 28px/23px */
+    --font-size--2xl: clamp(1.75rem, 1.672rem + 0.391vw, 2.063rem); /* 28px/33px */
+    --font-size--3xl: clamp(2.063rem, 1.828rem + 1.172vw, 3rem); /* 33px/48px */
+    --font-size--4xl: clamp(2.5rem, 2.266rem + 1.172vw, 3.438rem); /* 40px/55px */
+    --font-size--5xl: clamp(2.875rem, 2.094rem + 3.906vw, 6rem); /* 46px/96px */
+
+    /* Spacing */
+    --spacing--xs: 1.125rem; /* 18px */
+    --spacing--sm:  1.5rem; /* 24px */
+    --spacing--md: clamp(1.5rem, 1.375rem + 0.625vw, 2rem); /* 32px/24px */
+    --spacing--lg: clamp(1.5rem, 1.219rem + 1.406vw, 2.625rem); /* 42px/24px */
+    --spacing--xl: clamp(2rem, 1.688rem + 1.563vw, 3.25rem); /* 52px/32px */
+    --spacing--2xl: clamp(2rem, 1.563rem + 2.188vw, 3.75rem); /* 60px/32px */
+    --spacing--3xl: clamp(3.75rem, 2.813rem + 4.688vw, 7.5rem); /* 120px/60px */
+    --spacing--4xl: clamp(7.5rem, 4.063rem + 7.188vw, 15rem); /* 240px/120px */
+}

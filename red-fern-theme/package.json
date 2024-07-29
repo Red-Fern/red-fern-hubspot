@@ -1,0 +1,12 @@
+{
+    "name": "red-fern",
+    "version": "1.0.0",
+    "description": "Red-Fern HubSpot theme",
+    "scripts": {
+        "watch": "tailwindcss -i ./css/tailwind/input.css -o ./css/tailwind/output.css --watch",
+        "production": "tailwindcss -i ./css/tailwind/input.css -o ./css/tailwind/output.css --minify"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.3"
+    }
+}

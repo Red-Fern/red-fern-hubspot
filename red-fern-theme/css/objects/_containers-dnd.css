@@ -1,0 +1,26 @@
+.content-wrapper {
+    margin: 0 auto;
+}
+
+.dnd-section > .row-fluid {
+    margin: 0 auto;
+}
+
+.dnd-section .dnd-column {
+    padding: 0 var(--spacing--lg);
+}
+
+@media (max-width: 1023px) {
+    .dnd-section .dnd-column + .dnd-column:has(.dnd-row) {
+        margin-top: var(--spacing--lg);
+    }
+
+    .dnd-section.mob-reverse .row-fluid {
+        flex-direction: column-reverse;
+    }
+
+    .dnd-section.mob-reverse .dnd-column + .dnd-column:has(.dnd-row) {
+        margin-top: 0;
+        margin-bottom: var(--spacing--lg);
+    }
+}

@@ -1,0 +1,136 @@
+{% import './tools/_macros.css' %}
+  
+{###########################################################################}
+{############################   1. Variables   #############################}
+{###########################################################################}
+
+/* See ./css-variables.css */
+
+{###########################################################################}
+{##################   2. Containers / Grid / DND areas   ###################}
+{###########################################################################}
+
+.content-wrapper {
+  padding-left: var(--spacing--lg);
+  padding-right: var(--spacing--lg);
+  max-width: calc(var(--container-width) + var(--spacing--lg) * 2);
+}
+
+.content-wrapper.width-1300 {
+  max-width: calc(1300px + var(--spacing--lg) * 2);
+}
+
+.dnd-section,
+.emulated-dnd-margin,
+.content-wrapper--vertical-spacing {
+  margin: var(--spacing--2xl) 0;
+}
+
+.dnd-section > .row-fluid  {
+  max-width: calc(var(--container-width) + var(--spacing--lg) * 2);
+}
+
+{###########################################################################}
+{###########################   3. Typography   #############################}
+{###########################################################################}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body { 
+  color: var(--color--black);
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size--base);
+}
+
+/* Anchors */
+
+a {
+  color: var(--color--black);
+}
+
+/* Headings */
+
+h1,
+.h1 {
+  font-size: var(--font-size--5xl);
+}
+
+h2,
+.h2 {
+  font-size: var(--font-size--4xl);
+}
+
+h3,
+.h3 {
+  font-size: var(--font-size--3xl);
+}
+
+h4,
+.h4 {
+  font-size: var(--font-size--2xl);
+}
+
+h5,
+.h5 {
+  font-size: var(--font-size--xl);
+}
+
+h6,
+.h6 {
+  font-size: var(--font-size--lg);
+}
+
+{###########################################################################}
+{##############################   4. Forms   ###############################}
+{###########################################################################}
+
+/* Form placeholder text */
+
+::-webkit-input-placeholder {
+  color: var(--color--grey);
+}
+
+::-moz-placeholder {
+  color: var(--color--grey);
+}
+
+:-ms-input-placeholder {
+  color: var(--color--grey);
+}
+
+::placeholder {
+  color: var(--color--grey);
+}
+
+/* Inputs - date picker */
+
+.hs-fieldtype-date .input .hs-dateinput:before {
+  color: var(--color--grey);
+}
+
+.fn-date-picker td.is-selected .pika-button {
+  background: var(--color--black);
+}
+  
+.fn-date-picker td .pika-button:hover {
+  background-color: var(--color--black) !important;
+}
+
+.fn-date-picker td.is-today .pika-button {
+  color: var(--color--black);
+}
+{###########################################################################}
+{#############################   6. Tables   ###############################}
+{###########################################################################}
+
+/* Table */
+  
+table {
+  border-color: var(--color--grey);
+}
+
+{###########################################################################}
+{#############################   7. Theme   ################################}
+{###########################################################################}

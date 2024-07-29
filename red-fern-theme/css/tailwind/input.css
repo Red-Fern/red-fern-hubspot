@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* Typography */
+    p:first-child {
+        @apply mt-0;
+    }
+    p:last-child {
+        @apply mb-0;
+    }
+}
+
+/* Alpine */
+[x-cloak] {
+    @apply !hidden;
+}
