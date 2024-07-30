@@ -1,0 +1,15 @@
+[ {
+  "id" : "949303c4-ba3e-521b-5706-43e6d1a0f0ad",
+  "name" : "size",
+  "display_width" : null,
+  "label" : "Size",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "xs", "X Small" ], [ "sm", "Small" ], [ "md", "Medium" ], [ "lg", "Large" ], [ "xl", "X Large" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "sm"
+} ]

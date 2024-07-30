@@ -20,5 +20,6 @@
     ],
     "hidden_modules": [
         "@hubspot/button",
+        "@hubspot/horizontal_spacer"
     ]
 }
