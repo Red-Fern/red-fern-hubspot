@@ -15,11 +15,11 @@ module.exports = {
       'xs': 'var(--font-size--xs)',
       'sm': 'var(--font-size--sm)',
       'base': 'var(--font-size--base)',
-      'md': 'var(--font-size--md)',
-      'lg': 'var(--font-size--lg)',
-      'xl': 'var(--font-size--xl)',
-      '2xl': 'var(--font-size--2xl)',
-      '3xl': 'var(--font-size--3xl)'
+      'md': ['var(--font-size--md)', '1.25'],
+      'lg': ['var(--font-size--lg)' , '1.25'],
+      'xl': ['var(--font-size--xl)', '1.15'],
+      '2xl': ['var(--font-size--2xl)', '1.15'],
+      '3xl': ['var(--font-size--3xl)', '1.05']
     },
     extend: {
       colors: {
