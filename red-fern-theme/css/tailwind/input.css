@@ -18,11 +18,42 @@
 }
 
 @layer components {
+    /* Buttons */
+    .button {
+        @apply relative inline-flex justify-end items-center gap-[12px] px-[28px] py-[18px] border border-grey bg-white rounded-[30px] bg-none text-grey-dark text-xs text-left font-bold leading-[1.3] uppercase cursor-pointer overflow-hidden transition-colors ease-linear duration-[350ms];
+    }
+    .button span {
+        @apply static z-[1];
+    }
+    .button .cta_button {
+        @apply align-baseline;
+    }
+    .button a:before {
+        @apply content-[''] absolute inset-0;
+    }
+    .button:before {
+        @apply content-[''] absolute -top-1/2 -bottom-1/2 left-[-20%] right-[-20%] w-0 rounded-[200px] bg-teal z-[0] transition-[width] ease-linear duration-[350ms];
+    }
+    .button:hover {
+        @apply border-teal text-white;
+    }
+    .button:hover::before {
+        @apply w-[150%];
+    }
+    .button.with-arrow:after {
+        @apply content-[''] relative w-[13px] h-[12px] bg-grey-dark transition ease-linear duration-200;
+        mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="12" fill="none"><path fill="%23848484" d="M5.695.786c-.273.274-.246.684 0 .957L9.004 4.86H1.156c-.383 0-.656.301-.656.657v.875c0 .382.273.656.656.656h7.848l-3.309 3.144a.713.713 0 0 0 0 .957l.602.602c.273.246.683.246.93 0l5.332-5.332c.246-.246.246-.656 0-.93L7.227.185c-.247-.247-.657-.247-.93 0l-.602.601Z"/></svg>')
+            no-repeat 100% 100%;
+        mask-size: cover;
+    }
+    .button.with-arrow:hover:after {
+        @apply bg-white -rotate-45;
+    }
+
     /* Footer */
     .footer a {
         @apply hover:underline;
     }
-
     .footer .hs-menu-wrapper ul {
         @apply flex-row justify-center gap-xs lg:justify-end;
     }

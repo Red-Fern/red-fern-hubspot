@@ -1,0 +1,10 @@
+{
+    "global": false,
+    "content_types": ["LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST"],
+    "categories": ["forms_and_buttons"],
+    "icon": "../../images/module-icons/cta.svg",
+    "host_template_types": ["PAGE"],
+    "module_id": 102958376672,
+    "label": "Button",
+    "is_available_for_new_content": true
+}
