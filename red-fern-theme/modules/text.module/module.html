@@ -1,0 +1,10 @@
+{# Set theme classes that will changed based on whether 'light' or 'dark' theme is selected #}
+{% set theme_classes = 'text-grey-dark' %}
+
+{% if module.theme == 'dark' %}
+    {% set theme_classes = 'text-white' %}
+{% endif %}
+
+<div class="flex {{ module.alignment }} text-{{ module.font_size }} {{ theme_classes }}">
+    {{ module.text }}
+</div>

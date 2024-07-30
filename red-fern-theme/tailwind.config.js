@@ -47,14 +47,16 @@ module.exports = {
   },
   safelist: [
     {
-      pattern: /my-(xs|sm|md|lg|xl|2xl|3xl|4xl)/,
+      pattern: /my-(xs|sm|md|lg|xl)/,
     },
     {
-      pattern: /p-(xs|sm|md|lg|xl|2xl|3xl|4xl)/,
+      pattern: /text-(2xs|xs|sm|base|md|lg|xl|2xl|3xl)/,
     },
-    {
-      pattern: /text-(sm|base|md|lg|xl|2xl|3xl|4xl|5xl)/,
-    }
+    'justify-start',
+    'lg:justify-center',
+    'lg:justify-end',
+    'lg:text-center',
+    'lg:text-right',
   ],
   corePlugins: {
     preflight: false
