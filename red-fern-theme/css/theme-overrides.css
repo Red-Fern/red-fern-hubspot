@@ -39,7 +39,7 @@ html {
 }
 
 body { 
-  color: var(--color--black);
+  color: var(--color--grey-dark);
   font-family: var(--font-family--primary);
   font-size: var(--font-size--base);
 }
@@ -47,7 +47,7 @@ body {
 /* Anchors */
 
 a {
-  color: var(--color--black);
+  color: var(--color--grey-dark);
 }
 
 /* Headings */
@@ -111,15 +111,15 @@ h6,
 }
 
 .fn-date-picker td.is-selected .pika-button {
-  background: var(--color--black);
+  background: var(--color--grey-dark);
 }
   
 .fn-date-picker td .pika-button:hover {
-  background-color: var(--color--black) !important;
+  background-color: var(--color--grey-dark) !important;
 }
 
 .fn-date-picker td.is-today .pika-button {
-  color: var(--color--black);
+  color: var(--color--grey-dark);
 }
 {###########################################################################}
 {#############################   6. Tables   ###############################}
