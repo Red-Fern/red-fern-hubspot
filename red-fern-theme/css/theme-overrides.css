@@ -51,38 +51,6 @@ a {
   color: var(--color--grey-dark);
 }
 
-/* Headings */
-
-h1,
-.h1 {
-  font-size: var(--font-size--2xl);
-}
-
-h2,
-.h2 {
-  font-size: var(--font-size--2xl);
-}
-
-h3,
-.h3 {
-  font-size: var(--font-size--xl);
-}
-
-h4,
-.h4 {
-  font-size: var(--font-size--lg);
-}
-
-h5,
-.h5 {
-  font-size: var(--font-size--md);
-}
-
-h6,
-.h6 {
-  font-size: var(--font-size--base);
-}
-
 {###########################################################################}
 {##############################   4. Forms   ###############################}
 {###########################################################################}
