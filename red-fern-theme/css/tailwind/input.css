@@ -55,6 +55,9 @@
     .button span {
         @apply static z-[1];
     }
+    .button a {
+        @apply transition-colors ease-linear duration-[350ms];
+    }
     .button .cta_button {
         @apply align-baseline;
     }
@@ -66,6 +69,9 @@
     }
     .button:hover {
         @apply border-teal text-white;
+    }
+    .button:hover a {
+        @apply text-white;
     }
     .button:hover::before {
         @apply w-[150%];

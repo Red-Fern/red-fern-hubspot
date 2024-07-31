@@ -52,6 +52,7 @@ module.exports = {
     {
       pattern: /text-(2xs|xs|sm|base|md|lg|xl|2xl|3xl)/,
     },
+    'text-teal',
     'justify-start',
     'lg:justify-center',
     'lg:justify-end',
