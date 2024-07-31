@@ -91,6 +91,9 @@
     .case-study-section h2 {
         @apply mb-0;
     }
+    .form-section .hs_cos_wrapper_type_form {
+        @apply block p-md border border-grey rounded-[10px];
+    }
 }
 
 /* Alpine */
