@@ -42,19 +42,19 @@
   "default" : "justify-start"
 }, {
   "id" : "db593f0d-46c1-ad14-8667-b454891dee17",
-  "name" : "theme",
+  "name" : "text_colour",
   "display_width" : null,
-  "label" : "Theme",
-  "help_text" : "<b>Light:</b> black text on a light background<br/><b>Dark:</b> white text on a dark background",
+  "label" : "Text Colour",
+  "help_text" : "",
   "required" : false,
   "locked" : false,
-  "display" : "radio",
-  "choices" : [ [ "light", "Light" ], [ "dark", "Dark" ] ],
+  "display" : "select",
+  "choices" : [ [ "grey-dark", "Black" ], [ "white", "White" ], [ "teal", "Teal" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
   "type" : "choice",
-  "default" : "light"
+  "default" : "grey-dark"
 }, {
   "id" : "dc846e74-1140-e884-9c0c-9ec945356174",
   "name" : "text",

@@ -23,7 +23,7 @@
 .dnd-section,
 .emulated-dnd-margin,
 .content-wrapper--vertical-spacing {
-  margin: var(--spacing--2xl) 0;
+  margin: var(--spacing--xl) 0;
 }
 
 .dnd-section > .row-fluid  {
