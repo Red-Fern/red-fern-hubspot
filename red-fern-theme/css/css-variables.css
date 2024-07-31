@@ -5,15 +5,15 @@
     --container-width: 1470px;
 
     /* Colors */
-    --color-black: #000;
-    --color-navy: #13151e;
-    --color-grey-dark: #212121;
-    --color-grey-light: #f2f2f2;
-    --color-grey: #848484;
-    --color-teal-dark: #008783;
-    --color-teal: #00c1af;
-    --color-off-white: #fbfbfb;
-    --color-white: #fff;
+    --color--black: #000;
+    --color--navy: #13151e;
+    --color--grey-dark: #212121;
+    --color--grey-light: #f2f2f2;
+    --color--grey: #848484;
+    --color--teal-dark: #008783;
+    --color--teal: #00c1af;
+    --color--off-white: #fbfbfb;
+    --color--white: #fff;
 
     /* Typography */
     --font-family--primary: "Hanken Grotesk", "Helvetica", "Arial", sans-serif;

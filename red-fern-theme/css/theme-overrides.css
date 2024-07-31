@@ -89,25 +89,25 @@ h6,
 /* Form placeholder text */
 
 ::-webkit-input-placeholder {
-  color: var(--color--grey-light);
+  color: var(--color--grey);
 }
 
 ::-moz-placeholder {
-  color: var(--color--grey-light);
+  color: var(--color--grey);
 }
 
 :-ms-input-placeholder {
-  color: var(--color--grey-light);
+  color: var(--color--grey);
 }
 
 ::placeholder {
-  color: var(--color--grey-light);
+  color: var(--color--grey);
 }
 
 /* Inputs - date picker */
 
 .hs-fieldtype-date .input .hs-dateinput:before {
-  color: var(--color--grey-light);
+  color: var(--color--grey);
 }
 
 .fn-date-picker td.is-selected .pika-button {

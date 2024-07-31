@@ -23,15 +23,15 @@ module.exports = {
     },
     extend: {
       colors: {
-        'black': 'var(--color-black)',
-        'navy': 'var(--color-navy)',
-        'grey-dark': 'var(--color-grey-dark)',
-        'grey-light': 'var(--color-grey-light)',
-        'grey': 'var(--color-grey)',
-        'teal-dark': 'var(--color-teal-dark)',
-        'teal': 'var(--color-teal)',
-        'off-white': 'var(--color-off-white)',
-        'white': 'var(--color-white)'
+        'black': 'var(--color--black)',
+        'navy': 'var(--color--navy)',
+        'grey-dark': 'var(--color--grey-dark)',
+        'grey-light': 'var(--color--grey-light)',
+        'grey': 'var(--color--grey)',
+        'teal-dark': 'var(--color--teal-dark)',
+        'teal': 'var(--color--teal)',
+        'off-white': 'var(--color--off-white)',
+        'white': 'var(--color--white)'
       },
       spacing: {
         'xs': 'var(--spacing--xs)',
