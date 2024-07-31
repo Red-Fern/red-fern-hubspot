@@ -1,19 +1,19 @@
 (function () {
   // Variables
-  var nav = document.querySelector('.header__navigation');
-  var langSwitcher = document.querySelector('.header__language-switcher');
-  var search = document.querySelector('.header__search');
-  var allToggles = document.querySelectorAll('.header--toggle');
-  var navToggle = document.querySelector('.header__navigation--toggle');
-  var langToggle = document.querySelector('.header__language-switcher--toggle');
-  var searchToggle = document.querySelector('.header__search--toggle');
-  var closeToggle = document.querySelector('.header__close--toggle');
-  var allElements = document.querySelectorAll(
-    '.header--element, .header--toggle'
-  );
-  var emailGlobalUnsub = document.querySelector('input[name="globalunsub"]');
+  let emailGlobalUnsub = document.querySelector('input[name="globalunsub"]');
+  let stickySections = document.querySelectorAll('.sticky-section');
 
   // Functions
+
+  // Function for getting outer height of an element
+  function outerHeight(element) {
+    const height = element.offsetHeight,
+          style = window.getComputedStyle(element);
+
+    return ['top', 'bottom']
+      .map(side => parseInt(style[`margin-${side}`]))
+      .reduce((total, side) => total + side, height);
+  }
 
   // Function for executing code on document ready
   function domReady(callback) {
@@ -24,57 +24,12 @@
     }
   }
 
-  // Function for toggling mobile navigation
-  function toggleNav() {
-    allToggles.forEach(function (toggle) {
-      toggle.classList.toggle('hide');
-    });
-
-    nav.classList.toggle('open');
-    navToggle.classList.toggle('open');
-
-    closeToggle.classList.toggle('show');
-  }
-
-  // Function for toggling mobile language selector
-  function toggleLang() {
-    allToggles.forEach(function (toggle) {
-      toggle.classList.toggle('hide');
-    });
-
-    langSwitcher.classList.toggle('open');
-    langToggle.classList.toggle('open');
-
-    closeToggle.classList.toggle('show');
-  }
-
-  // Function for toggling mobile search field
-  function toggleSearch() {
-    allToggles.forEach(function (toggle) {
-      toggle.classList.toggle('hide');
-    });
-
-    search.classList.toggle('open');
-    searchToggle.classList.toggle('open');
-
-    closeToggle.classList.toggle('show');
-  }
-
-  // Function for the header close option on mobile
-  function closeAll() {
-    allElements.forEach(function (element) {
-      element.classList.remove('hide', 'open');
-    });
-
-    closeToggle.classList.remove('show');
-  }
-
   // Function to disable the other checkbox inputs on the email subscription system page template
   function toggleDisabled() {
-    var emailSubItem = document.querySelectorAll('#email-prefs-form .item');
+    let emailSubItem = document.querySelectorAll('#email-prefs-form .item');
 
     emailSubItem.forEach(function (item) {
-      var emailSubItemInput = item.querySelector('input');
+      let emailSubItemInput = item.querySelector('input');
 
       if (emailGlobalUnsub.checked) {
         item.classList.add('disabled');
@@ -87,35 +42,70 @@
     });
   }
 
+  // Function to add 'no-empty' class to form fields with content
+  function watchForms(form) {
+    const items = form.querySelectorAll('.hs-fieldtype-text input, .hs-fieldtype-textarea textarea');
+    const noEmptyClass = 'no-empty';
+  
+    const checkAndToggleClass = (elem) => {
+      elem.closest('.hs-form-field').classList.toggle(noEmptyClass, elem.value.length > 0);
+    };
+  
+    items.forEach((item) => {
+      checkAndToggleClass(item);
+      item.addEventListener('change', (e) => {
+        checkAndToggleClass(e.target);
+      });
+    });
+  }
+
+  // Function to adjust the overlap of sticky sections
+  function adjustOverlaps() {
+    for (let i = 0; i < stickySections.length; i++) {
+      let stickySection = stickySections[i];
+      let previousSection = stickySection.previousElementSibling;
+      let overlapColumn = stickySection.querySelector('&>div > .dnd-column:last-child');
+  
+      if (overlapColumn) {
+        if (window.innerWidth > 1023 && previousSection) {
+          let previousSectionHeight = outerHeight(previousSection);
+
+          overlapColumn.style.marginTop = -previousSectionHeight + 'px';
+        } else {
+          overlapColumn.style.marginTop = '';
+        }
+      }
+    }
+  }
+
   // Execute JavaScript on document ready
   domReady(function () {
     if (!document.body) {
       return;
     } else {
-      // Function dependent on language switcher
-      if (langSwitcher) {
-        langToggle.addEventListener('click', toggleLang);
-      }
-
-      // Function dependent on navigation
-      if (navToggle) {
-        navToggle.addEventListener('click', toggleNav);
-      }
-
-      // Function dependent on search field
-      if (searchToggle) {
-        searchToggle.addEventListener('click', toggleSearch);
-      }
-
-      // Function dependent on close toggle
-      if (closeToggle) {
-        closeToggle.addEventListener('click', closeAll);
-      }
-
       // Function dependent on email unsubscribe from all input
       if (emailGlobalUnsub) {
         emailGlobalUnsub.addEventListener('change', toggleDisabled);
       }
+
+      if (stickySections) {
+        adjustOverlaps();
+      }
     }
   });
+
+  // Execute JavaScript onFormReady
+  window.addEventListener('message', event => {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+      const forms = document.querySelectorAll('.hs-form');
+      forms.forEach(watchForms);
+    }
+  });
+
+  // Execute JavaScript on window resize
+  window.addEventListener('resize', function(event) {
+    if (stickySections) {
+      adjustOverlaps();
+    }
+  }, true);
 })();
