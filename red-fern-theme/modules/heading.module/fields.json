@@ -34,7 +34,7 @@
   "required" : false,
   "locked" : false,
   "display" : "radio",
-  "choices" : [ [ "justify-start", "Left" ], [ "lg:justify-center lg:text-center", "Center" ], [ "lg:justify-end lg:text-right", "Right" ] ],
+  "choices" : [ [ "justify-start", "Left" ], [ "lg:justify-center lg:text-center", "Center" ], [ "lg:justify-end", "Right" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,
