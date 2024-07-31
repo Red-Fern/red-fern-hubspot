@@ -1,0 +1,43 @@
+<!--
+  templateType: section
+  label: Simple CTA
+  isAvailableForNewContent: true
+  screenshotPath: "../images/section-previews/simple-cta.png"
+  description: "Insert text and a button."
+-->
+
+{% dnd_section
+  full_width=false
+%}
+  {% dnd_column
+    offset=0,
+    width=7
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/heading",
+        offset=0,
+        width=12,
+        tag="h3",
+        text="Lorem ipsum dolor<span class=\"text-teal\">.</span>"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column
+    offset=7,
+    width=5
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/button",
+        offset=0,
+        width=12,
+        alignment="lg:justify-end",
+        icon="with-arrow",
+        type="link"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
