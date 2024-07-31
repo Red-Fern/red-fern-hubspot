@@ -1,0 +1,207 @@
+<!--
+  templateType: section
+  label: Case Study
+  isAvailableForNewContent: true
+  screenshotPath: "../images/section-previews/case-study.png"
+  description: "Insert a case study."
+-->
+
+{% dnd_section
+  class="case-study-section",
+  background_color="rgba(132, 132, 132, 1)",
+  padding={
+    "default" : {
+      "bottom" : "120px",
+      "top" : "240px"
+    },
+    "mobile" : {
+      "bottom" : "60px",
+      "top" : "60px"
+    }
+  },
+  margin={
+    "default" : {
+      "bottom" : "0px",
+      "top" : "0px"
+    }
+  }
+  full_width=false
+%}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "left" : "0px",
+        "right" : "0px"
+      }
+    }
+  %}
+    {% dnd_row
+      vertical_alignment="BOTTOM"
+    %}
+      {% dnd_column
+        offset=0,
+        width=8
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/heading",
+            offset=0,
+            width=12,
+            font_size="3xl",
+            text_colour="white"
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=8,
+        width=4
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/text",
+            offset=0,
+            width=12,
+            alignment="lg:justify-end",
+            font_size="sm",
+            text_colour="white"
+          %}
+            {% module_attribute "text" %}
+              <p><strong>LOREM IPSUM<br></strong><strong>LOREM IPSUM<br></strong><strong>LOREM IPSUM<br></strong><strong>LOREM IPSUM<br></strong><strong>LOREM IPSUM</strong></p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_module
+        path="/red-fern-theme/modules/horizontal-spacer",
+        offset=0,
+        width=12
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/linked_image",
+            offset=0,
+            width=12,
+            horizontal_alignment="CENTER",
+            img={
+              "alt" : "1470x650",
+              "height" : 650,
+              "loading" : "lazy",
+              "max_height" : 650,
+              "max_width" : 1470,
+              "size_type" : "auto",
+              "src" : "https://145131140.fs1.hubspotusercontent-eu1.net/hubfs/145131140/1470x650.png",
+              "width" : 1470
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/horizontal-spacer",
+            offset=0,
+            width=12,
+            size="md"
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/text",
+            offset=0,
+            width=12,
+            font_size="md",
+            text_colour="white"
+          %}
+            {% module_attribute "text" %}
+              Lorem ipsum dolor sit amet consectetur. Consectetur rhoncus amet sed ante tortor cursus scelerisque. Magna enim enim scelerisque eu. Et consequat lacus aliquet adipiscing ac amet nullam at.&nbsp;
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/horizontal-spacer",
+            offset=0,
+            width=12,
+            size="md"
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+    {% dnd_row %}
+      {% dnd_column
+        offset=0,
+        width=6
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/text",
+            offset=0,
+            width=12,
+            text_colour="white"
+          %}
+            {% module_attribute "text" %}
+              Lorem ipsum dolor sit amet consectetur. In nisl proin tempor a eu. Purus tristique laoreet sagittis est eget in eu tristique aliquam. Pellentesque neque consectetur fames varius elit varius aenean nunc. Ipsum adipiscing aenean mi amet consectetur at dolor. In nisl proin tempor a eu. Purus tristique laoreet sagittis est eget in eu tristique aliquam.&nbsp;
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+      {% dnd_column
+        offset=6,
+        width=6
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/text",
+            offset=0,
+            width=12,
+            alignment="justify-start",
+            font_size="base",
+            text_colour="white"
+          %}
+            {% module_attribute "text" %}
+              Lorem ipsum dolor sit amet consectetur. Nulla suscipit duis pellentesque vulputate pellentesque quam sed ipsum. Pulvinar sit et nunc leo tellus nisi.
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/horizontal-spacer",
+            offset=0,
+            width=12,
+            size="md"
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module
+            path="../modules/button",
+            offset=0,
+            width=12,
+            icon="with-arrow"
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
