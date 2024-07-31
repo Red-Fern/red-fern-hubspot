@@ -13,17 +13,19 @@
 {% endif %}
 
 {# Button #}
-{% if module.type == 'cta' %}
-  <span class="button {{ module.style }} {{ module.icon }}">
-    <span>{{ cta(module.cta) }}</span>
-  </span>
-{% else %}
-  <a
-    class="button {{ module.style }} {{ module.icon }}" 
-    href="{{ href|escape_url }}"
-    {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
-    {% if rel %}rel="{{ rel|join(" ")|escape_attr }}"{% endif %}
-  >
-    <span>{{ module.text|escape_html }}</span>
-  </a>
-{% endif %}
+<div class="flex {{ module.alignment }}">
+  {% if module.type == 'cta' %}
+    <span class="button {{ module.style }} {{ module.icon }}">
+      <span>{{ cta(module.cta) }}</span>
+    </span>
+  {% else %}
+    <a
+      class="button {{ module.style }} {{ module.icon }}" 
+      href="{{ href|escape_url }}"
+      {% if module.link.open_in_new_tab %}target="_blank"{% endif %}
+      {% if rel %}rel="{{ rel|join(" ")|escape_attr }}"{% endif %}
+    >
+      <span>{{ module.text|escape_html }}</span>
+    </a>
+  {% endif %}
+</div>

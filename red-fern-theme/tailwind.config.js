@@ -58,8 +58,7 @@ module.exports = {
     'justify-start',
     'lg:justify-center',
     'lg:justify-end',
-    'lg:text-center',
-    'lg:text-right',
+    'lg:text-center'
   ],
   corePlugins: {
     preflight: false

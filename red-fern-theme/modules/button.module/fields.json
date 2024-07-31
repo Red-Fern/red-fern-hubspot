@@ -39,26 +39,6 @@
     "open_in_new_tab" : false
   }
 }, {
-  "id" : "button_text",
-  "name" : "text",
-  "display_width" : null,
-  "label" : "Text",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "visibility" : {
-    "controlling_field" : null,
-    "controlling_field_path" : "type",
-    "controlling_value_regex" : "link",
-    "property" : null,
-    "operator" : "EQUAL",
-    "access" : null
-  },
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Add a button link here"
-}, {
   "id" : "c26f05be-0ae3-6824-8bf7-f976831678af",
   "name" : "cta",
   "display_width" : null,
@@ -103,4 +83,38 @@
   "preset" : null,
   "type" : "choice",
   "default" : "none"
+}, {
+  "id" : "73b980a5-f5ea-651b-b0b3-38f14992de5f",
+  "name" : "alignment",
+  "display_width" : null,
+  "label" : "Alignment",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "choices" : [ [ "justify-start", "Left" ], [ "lg:justify-center", "Center" ], [ "lg:justify-end", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "justify-start"
+}, {
+  "id" : "button_text",
+  "name" : "text",
+  "display_width" : null,
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "type",
+    "controlling_value_regex" : "link",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Add a button link here"
 } ]
