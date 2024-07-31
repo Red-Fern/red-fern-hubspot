@@ -1,69 +1,180 @@
-/* Form */
 
-form {
-  accent-color: var(--colour--accent-500);
+.hs-form {
+  padding-top: 20px;
 }
 
-form.stacked {
+.hs-form label {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  transition: all 0.35s linear;
+}
+
+.hs-form input[type="text"],
+.hs-form input[type="email"],
+.hs-form input[type="tel"],
+.hs-form input[type="password"],
+.hs-form textarea {
+  position: relative;
+  padding: 12px 0 8px;
   display: block;
+  width: 100%;  
+  height: 34px;
+  border-radius: 0;
+  border-bottom: 1px solid var(--color--grey-dark);
+  background: none;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 400;
 }
 
-/* Fields */
-
-.hs-form-field {
-  margin-bottom: 1.4rem;
+.hs-form textarea {
+  padding-top: 0;
+  height: 170px;
+  max-height: 170px;
+  font-weight: 400;
+  resize: none;
+  overflow-y: auto;
 }
 
-/* Labels */
-
-form label {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 0.625rem;
+.hs-form input:focus ~ label,
+.hs-form textarea:focus ~ label,
+.hs-form input:not(:placeholder-shown):not(:focus) ~ label,
+.hs-form textarea:not(:placeholder-shown):not(:focus) ~ label {
+  top: 10px;
+  font-size: 14px;
 }
 
-/* Form Title */
-.form-title {
-  margin-bottom: 0;
+.hs-form input[type=file] {
+  padding: initial;
+  max-width: max-content;
+  border: 1px solid;
+  background-color: transparent;
 }
 
-/* Help text */
-
-form legend {
-  font-size: 0.875rem;
-  color: var(--color--grey);
-  padding: 0 0 10px 0;
+.hs-form input::placeholder,
+.hs-form textarea::placeholder,
+.hs-form input::-webkit-input-placeholder,
+.hs-form textarea::-webkit-input-placeholder {
+  color: var(--color--grey-dark);
+  font-size: 18px;
+  opacity: 1;
 }
 
-/* Inputs */
-
-form input[type=text],
-form input[type=search],
-form input[type=email],
-form input[type=password],
-form input[type=tel],
-form input[type=number],
-form input[type=file],
-form select,
-form textarea {
-  display: inline-block;
-  font-size: 1rem;
-  padding: 1rem var(--spacing--xs);
-  width: 100%;
-  border: 1px solid var(--color--grey-light);
-  border-radius: 12px;
-  background-color: transparent; 
-}
-
-form select {
+.hs-form select {
   -webkit-appearance: none;
   -moz-appearance: none;
+  -ms-appearance: none;
   appearance: none;
+  margin: 0;
+  padding: 0 1em 0 0;
+  width: 100%;
+  height: 34px;
+  border: 1px solid var(--color--grey-dark);
+  border-radius: 0;
+  border-width: 0 0 1px;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+      45deg,
+      transparent 50%,
+      currentColor 50%
+    ),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
+  background-position: right 10px top 0.85em, right 5px top 0.85em;
+  background-size: 5px 5px, 5px 5px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
-form textarea {
-  resize: vertical;
+.hs-form select::-ms-expand {
+  display: none;
 }
+
+.hs-form .hs-fieldtype-select label {
+  display: none;
+}
+
+.hs-form .inputs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hs-form .inputs-list > li {
+  display: block;
+  margin: 0.7rem 0;
+}
+
+.hs-form .inputs-list input,
+.hs-form .inputs-list span {
+  vertical-align: middle;
+}
+
+.hs-form .inputs-list label {
+  position: relative;
+  top: auto;
+  left: auto;
+}
+
+.hs-form input[type=checkbox],
+.hs-form input[type=radio] {
+  margin-right: 0.625rem;
+  width: 1rem !important;
+  height: 1rem !important;
+  cursor: pointer;
+}
+
+.hs-form .legal-consent-container {
+  padding: 10px 0;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.hs-form .legal-consent-container a {
+  text-decoration: underline;
+}
+
+.hs-form .hs-submit {
+  margin-top: var(--spacing--md);
+}
+
+.hs-form .hs-error-msg {
+  position: relative;
+  top: auto;
+  left: auto;
+  color: red;
+  font-size: 14px;
+}
+
+.hs-form .hs_error_rollup {
+  color: red;
+}
+
+.hs-form fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.hs-form .hs-form-field {
+  position: relative;
+  margin-top: 49px;
+  font-size: 18px;
+}
+
+.hs-form .hs-form-field:focus-within > label,
+.hs-form .hs-form-field.no-empty > label {
+  top: -20px;
+  font-size: 12px;
+}
+
+.hs-form .hs-form-field:first-child {
+  margin-top: 0;
+}
+
+/* Layout */
 
 fieldset.form-columns-1 .input {
   margin-right: 0 !important;
@@ -108,141 +219,3 @@ form fieldset.form-columns-3 .hs-form-field .input {
     width: 100% !important;
   }
 }
-
-/* Inputs - checkbox/radio */
-
-form .inputs-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-form .inputs-list > li {
-  display: block;
-  margin: 0.7rem 0;
-}
-
-form .inputs-list input,
-form .inputs-list span {
-  vertical-align: middle;
-}
-
-form input[type=checkbox],
-form input[type=radio] {
-  cursor: pointer;
-  margin-right: 0.625rem;
-  width: 1rem !important;
-  height: 1rem !important;
-}
-
-/* Inputs - date picker */
-
-.hs-dateinput {
-  position: relative;
-}
-
-.hs-dateinput:before {
-  content:'\01F4C5';
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.fn-date-picker .pika-table thead th {
-  color: #FFF;
-}
-
-.fn-date-picker td.is-selected .pika-button {
-  border-radius: 0;
-  box-shadow: none;
-}
-
-.fn-date-picker td .pika-button:hover,
-.fn-date-picker td .pika-button:focus {
-  border-radius: 0 !important;
-  color: #FFF;
-}
-
-/* Inputs - file picker */
-
-form input[type=file] {
-  background-color: transparent;
-  border: initial;
-  padding: initial;
-  border: 1px solid;
-  max-width: max-content;
-}
-
-/* Headings and text */
-
-form .hs-richtext,
-form .hs-richtext p {
-  font-size: 0.875rem;
-  margin: 0 0 1.4rem;
-}
-
-form .hs-richtext img {
-  max-width: 100% !important;
-}
-
-/* GDPR */
-
-.legal-consent-container .hs-form-booleancheckbox-display > span,
-.legal-consent-container .hs-form-booleancheckbox-display > span p {
-  margin-left: 1rem !important;
-}
-
-/* Validation */
-
-.hs-form-required {
-  color: #EF6B51;
-}
-
-.hs-input.invalid.error {
-  border-color: #EF6B51;
-}
-
-.hs-error-msg {
-  color: #EF6B51;
-  margin-top: 0.35rem;
-}
-
-/* Submit button */
-
-form input[type=submit],
-form .hs-button {
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  transition: all 0.15s linear;
-  white-space: normal;
-}
-
-{% if ( get_asset_version("@hubspot/search_input") == "1" ) %}
-  /* Search button input field and suggestions */
-  .body-container-wrapper .hs-search-field__button {
-    padding: 15px;
-  }
-
-  .body-container-wrapper .hs-search-field__bar--button-inline .hs-search-field__button {
-    margin-left: 6px;
-    margin-bottom: 0;
-  }
-
-  .body-container-wrapper .hs-search-field__button svg {
-    height: 15px;
-    fill: #fff;
-  }
-
-  .body-container-wrapper .hs-search-field__bar > form > .hs-search-field__input {
-    padding: 10px;
-  }
-
-  .body-container-wrapper .hs-search-field__suggestions li a {
-    color: #494A52;
-    padding: 0.35rem 0.7rem;
-    text-decoration: none;
-    transition: background-color 0.3s;
-  }
-{% endif %}

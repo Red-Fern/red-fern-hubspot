@@ -63,5 +63,32 @@
     </script>
     {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
     {{ standard_footer_includes }}
+
+    {% require_js %}
+      <script>
+        function watchForms(form) {
+          const items = form.querySelectorAll('.hs-fieldtype-text input, .hs-fieldtype-textarea textarea');
+          const noEmptyClass = 'no-empty';
+        
+          const checkAndToggleClass = (elem) => {
+            elem.closest('.hs-form-field').classList.toggle(noEmptyClass, elem.value.length > 0);
+          };
+        
+          items.forEach((item) => {
+            checkAndToggleClass(item);
+            item.addEventListener('change', (e) => {
+              checkAndToggleClass(e.target);
+            });
+          });
+        }
+        
+        window.addEventListener('message', event => {
+          if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+            const forms = document.querySelectorAll('.hs-form');
+            forms.forEach(watchForms);
+          }
+        });
+      </script>
+    {% end_require_js %} 
   </body>
 </html>

@@ -88,7 +88,7 @@
 
     /* Footer */
     .footer a {
-        @apply hover:underline;
+        @apply text-grey hover:underline;
     }
     .footer .hs-menu-wrapper ul {
         @apply flex-row justify-center gap-xs lg:justify-end;
@@ -98,4 +98,11 @@
 /* Alpine */
 [x-cloak] {
     @apply !hidden;
+}
+
+/* Button extends */
+.hs-button,
+form .hs-button,
+form input[type="submit"] {
+    @apply button before:hidden hover:bg-teal;
 }
