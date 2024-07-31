@@ -84,7 +84,7 @@
         @apply flex-row justify-center gap-xs lg:justify-end;
     }
 
-    /* Sections */
+    /* Modules/Sections */
     .sticky-section > div > .dnd-column:last-child > div {
         @apply p-md border border-grey rounded-[10px] bg-grey-light lg:sticky lg:top-0;
     }
