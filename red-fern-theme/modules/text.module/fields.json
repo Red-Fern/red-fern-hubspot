@@ -48,5 +48,6 @@
   "label" : "Text",
   "required" : false,
   "locked" : false,
-  "type" : "richtext"
+  "type" : "richtext",
+  "default" : "<span>Lorem ipsum dolor sit amet consectetur. </span>"
 } ]
