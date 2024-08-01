@@ -21,6 +21,7 @@
     "hidden_modules": [
         "@hubspot/button",
         "@hubspot/video",
-        "@hubspot/horizontal_spacer"
+        "@hubspot/horizontal_spacer",
+        "@hubspot/divider"
     ]
 }

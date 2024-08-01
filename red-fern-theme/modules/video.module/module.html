@@ -1,4 +1,4 @@
-{% if module.embed_field.oembed_url or module.embed_field.embed_html or module.hubspot_video.player_id != null or module.file %}
+{% if module.embed_field.oembed_url or module.embed_field.embed_html or module.hubspot_video.player_id != null or module.video_file %}
   {% if module.video_type == "embed" %}
     {% if module.embed_field.source_type == "oembed" %}
       <div class="oembed_container {% if module.embed_field.size_type == 'auto_full_width' %}oembed_container--full-size{% endif %}" id="oembed_container-{{ name }}">
