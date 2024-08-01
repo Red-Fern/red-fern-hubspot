@@ -11,6 +11,10 @@
 }
 
 @media (max-width: 1023px) {
+    .dnd-section .dnd-column {
+        padding: 0 var(--spacing--sm);
+    }
+
     .dnd-section .dnd-column + .dnd-column:has(.dnd-row) {
         margin-top: var(--spacing--lg);
     }
