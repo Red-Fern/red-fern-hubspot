@@ -1,0 +1,77 @@
+{# Set theme classes that will changed based on whether 'light' or 'dark' theme is selected #}
+{% set theme_classes = '' %}
+
+{% if module.theme == 'dark' %}
+    {% set theme_classes = 'text-white' %}
+{% endif %}
+
+<div class="flex flex-col {{ module.layout == 'cards' ? 'md:flex-row' : '' }} gap-lg">
+    {% for item in module.articles %}
+        {% set href = item.link.url.href %}
+
+        {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+        {% endif %}
+
+        <a
+            {% if item.link.url.type is equalto "CALL_TO_ACTION"  %}
+                href="{{ href }}"
+            {% else %}
+                href="{{ href|escape_url }}"
+            {% endif %}
+            {% if item.link.open_in_new_tab %}
+                target="_blank"
+            {% endif %}
+            {% if item.link.rel %}
+                rel="{{ item.link.rel|escape_attr }}"
+            {% endif %}
+            class="group flex flex-col gap-lg {{ module.layout == 'list' ? 'pb-lg border-b border-grey last:p-0 last:border-0' : '' }} {{ theme_classes }}"
+        >
+            {% if module.layout == 'cards' %}
+                {% if item.image.src %}
+                    {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+                    
+                    <div class="aspect-[1/0.6] rounded-[10px] overflow-hidden">
+                        <img src="{{ item.image.src|escape_url }}" class="w-full h-full object-cover scale-100 transition-transform ease-linear duration-[350ms] group-hover:scale-105" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }}>
+                    </div>
+                {% endif %}
+
+                <h4>{{ item.title }}</h4>
+
+                <div class="flex justify-between items-center gap-lg">
+                    <span class="text-xs font-bold uppercase">Resource</span>
+
+                    <span class="button arrow shrink-0">
+                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.69531 0.786133C5.42188 1.05957 5.44922 1.46973 5.69531 1.74316L9.00391 4.86035H1.15625C0.773438 4.86035 0.5 5.16113 0.5 5.5166V6.3916C0.5 6.77441 0.773438 7.04785 1.15625 7.04785H9.00391L5.69531 10.1924C5.44922 10.4658 5.44922 10.876 5.69531 11.1494L6.29688 11.751C6.57031 11.9971 6.98047 11.9971 7.22656 11.751L12.5586 6.41895C12.8047 6.17285 12.8047 5.7627 12.5586 5.48926L7.22656 0.18457C6.98047 -0.0615234 6.57031 -0.0615234 6.29688 0.18457L5.69531 0.786133Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </div>
+            {% endif %}
+
+            {% if module.layout == 'list' %}
+                <div class="flex text-xs font-bold uppercase">
+                    {% if item.category %}
+                        {{ item.category }}
+                    {% endif %}
+
+                    {% if item.category and item.date %}|{% endif %}
+
+                    {% if item.category %}
+                        {{ item.date | format_datetime('d.M.yyyy') }}
+                    {% endif %}
+                </div>
+
+                <div class="flex gap-lg">
+                    <h4 class="mb-0">{{ item.title }}</h4>
+
+                    <span class="button arrow shrink-0 mt-[1.9em]">
+                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.69531 0.786133C5.42188 1.05957 5.44922 1.46973 5.69531 1.74316L9.00391 4.86035H1.15625C0.773438 4.86035 0.5 5.16113 0.5 5.5166V6.3916C0.5 6.77441 0.773438 7.04785 1.15625 7.04785H9.00391L5.69531 10.1924C5.44922 10.4658 5.44922 10.876 5.69531 11.1494L6.29688 11.751C6.57031 11.9971 6.98047 11.9971 7.22656 11.751L12.5586 6.41895C12.8047 6.17285 12.8047 5.7627 12.5586 5.48926L7.22656 0.18457C6.98047 -0.0615234 6.57031 -0.0615234 6.29688 0.18457L5.69531 0.786133Z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                </div>
+            {% endif %}
+        </a>
+    {% endfor %}
+</div>

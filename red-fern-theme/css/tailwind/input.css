@@ -57,13 +57,15 @@
     .button:before {
         @apply content-[''] absolute -top-1/2 -bottom-1/2 left-[-20%] right-[-20%] w-0 rounded-[200px] bg-teal z-[0] transition-[width] ease-linear duration-[350ms];
     }
-    .button:hover {
+    .button:hover,
+    a:hover .button {
         @apply border-teal text-white;
     }
     .button:hover a {
         @apply text-white;
     }
-    .button:hover::before {
+    .button:hover::before,
+    a:hover .button:before {
         @apply w-[150%];
     }
     .button.with-arrow:after {
@@ -72,8 +74,19 @@
             no-repeat 100% 100%;
         mask-size: cover;
     }
-    .button.with-arrow:hover:after {
+    .button.with-arrow:hover:after,
+    a:hover .button.with-arrow:after {
         @apply bg-white -rotate-45;
+    }
+    .button.arrow {
+        @apply justify-center w-[30px] h-[30px] p-[9px] rounded-[50px] border-current text-current bg-transparent;
+    }
+    .button.arrow svg {
+        @apply shrink-0 transition ease-linear duration-200;
+    }
+    .button.arrow:hover svg,
+    a:hover .button.arrow svg {
+        @apply rotate-[-45deg];
     }
 
     /* Footer */
