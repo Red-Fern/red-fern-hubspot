@@ -62,10 +62,10 @@
     %}
   {% endif %}
 
-  {% if module.video_type == 'file' and module.file %}
+  {% if module.video_type == 'file' and module.video_file %}
     <div class="w-full aspect-[1/0.72] rounded-[10px] overflow-hidden">
       <video class="w-full h-full object-cover" crossorigin="anonymous" playsinline="playsinline" preload="none" loop="" muted="muted" autoplay>
-        <source src="{{ module.file }}" type="video/mp4" />
+        <source src="{{ module.video_file }}" type="video/mp4" />
       </video>
     </div>
   {% endif %}

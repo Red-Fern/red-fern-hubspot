@@ -40,7 +40,7 @@
 }, {
   "picker" : "file",
   "id" : "7e320717-5d1d-b60e-9994-ec2356078ffc",
-  "name" : "file",
+  "name" : "video_file",
   "display_width" : null,
   "label" : "File",
   "required" : false,

@@ -6,6 +6,6 @@
   "icon" : "../../../mV0_d-web-default-modules_hubspot/img/icon/insert-video-icon-1.svg",
   "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST", "WEB_INTERACTIVE" ],
   "module_id" : 111143818171,
-  "label" : "video",
+  "label" : "Video",
   "is_available_for_new_content" : true
 }
