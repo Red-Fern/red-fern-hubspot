@@ -1,0 +1,283 @@
+[ {
+  "id" : "video_type",
+  "name" : "video_type",
+  "display_width" : null,
+  "label" : "Video type",
+  "help_text" : "<b>File:</b> Upload a video file. The video will be sized and styled to fit the design. \n<br/>\n<b>Embed:</b> Provide an embed URL or code. The video will be sized and styled to HubSpot defaults. \n<br/>\n<b>HubSpot video:</b> Upload a video file. The video will be sized and styled to HubSpot defaults.",
+  "inline_help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "visibility_rules" : "ADVANCED",
+  "advanced_visibility" : {
+    "boolean_operator" : "OR",
+    "criteria" : [ {
+      "controlling_field" : null,
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : {
+        "operator" : "HAS_ALL",
+        "scopes" : [ "marketing-video" ]
+      }
+    }, {
+      "controlling_field" : "video_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "hubspot_video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    } ],
+    "children" : [ ]
+  },
+  "display" : "radio",
+  "choices" : [ [ "file", "File" ], [ "embed", "Embed" ], [ "hubspot_video", "HubSpot video" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "file"
+}, {
+  "picker" : "file",
+  "id" : "7e320717-5d1d-b60e-9994-ec2356078ffc",
+  "name" : "file",
+  "display_width" : null,
+  "label" : "File",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "video_type",
+    "controlling_value_regex" : "file",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "file"
+}, {
+  "id" : "hubspot_video",
+  "name" : "hubspot_video",
+  "display_width" : null,
+  "label" : "HubSpot video",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "video_type",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "hubspot_video",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "resizable" : true,
+  "show_preview" : true,
+  "show_advanced_options" : true,
+  "type" : "videoplayer"
+}, {
+  "id" : "embed_field",
+  "name" : "embed_field",
+  "display_width" : null,
+  "label" : "Embed",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "video_type",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "embed",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_source_types" : [ "oembed", "html" ],
+  "supported_oembed_types" : [ "video" ],
+  "resizable" : true,
+  "show_preview" : true,
+  "supported_media_bridge_providers" : [ ],
+  "type" : "embed",
+  "default" : {
+    "source_type" : "oembed"
+  }
+}, {
+  "id" : "oembed_thumbnail",
+  "name" : "oembed_thumbnail",
+  "display_width" : null,
+  "label" : "Custom thumbnail",
+  "required" : false,
+  "locked" : false,
+  "visibility_rules" : "ADVANCED",
+  "advanced_visibility" : {
+    "boolean_operator" : "AND",
+    "criteria" : [ {
+      "controlling_field" : "video_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "embed",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    }, {
+      "controlling_field" : "embed_field",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "(?=.*\"source_type\":\"oembed\")",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    }, {
+      "controlling_field" : "embed_field",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "(?=.*\"oembed_url\":\"(?!\")+)",
+      "property" : null,
+      "operator" : "MATCHES_REGEX",
+      "access" : null
+    } ],
+    "children" : [ ]
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "src" : "",
+    "alt" : null,
+    "size_type" : null,
+    "width" : null,
+    "height" : null,
+    "max_width" : null,
+    "max_height" : null,
+    "loading" : "disabled"
+  }
+}, {
+  "id" : "style_options",
+  "name" : "style_options",
+  "display_width" : null,
+  "label" : "Style options",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "style_options.oembed_thumbnail_play_button_color",
+    "name" : "oembed_thumbnail_play_button_color",
+    "display_width" : null,
+    "label" : "Play button color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : null,
+      "hidden_subfields" : {
+        "opacity" : true
+      }
+    },
+    "visibility_rules" : "ADVANCED",
+    "advanced_visibility" : {
+      "boolean_operator" : "OR",
+      "criteria" : [ ],
+      "children" : [ {
+        "boolean_operator" : "AND",
+        "criteria" : [ {
+          "controlling_field" : "video_type",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "hubspot_video",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        }, {
+          "controlling_field" : "hubspot_video",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "(?=.*\"player_id\":\\d+)",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        } ],
+        "children" : [ ]
+      }, {
+        "boolean_operator" : "AND",
+        "criteria" : [ {
+          "controlling_field" : "video_type",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "embed",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        }, {
+          "controlling_field" : "embed_field",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "(?=.*\"source_type\":\"oembed\")",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        }, {
+          "controlling_field" : "embed_field",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "(?=.*\"oembed_url\":\"(?!\")+)",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        }, {
+          "controlling_field" : "oembed_thumbnail",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "(?=.*\"src\":\"(?!\")+)",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null
+        } ],
+        "children" : [ ]
+      } ]
+    },
+    "type" : "color",
+    "default" : {
+      "color" : "#ffffff"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "oembed_thumbnail_play_button_color" : {
+      "color" : "#ffffff"
+    }
+  }
+}, {
+  "id" : "placeholder_fields",
+  "name" : "placeholder_fields",
+  "display_width" : null,
+  "label" : "Placeholder text",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "placeholder_fields.placeholder_title",
+    "name" : "placeholder_title",
+    "display_width" : null,
+    "label" : "Video placeholder title",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "No video selected"
+  }, {
+    "id" : "placeholder_fields.placeholder_description",
+    "name" : "placeholder_description",
+    "display_width" : null,
+    "label" : "Video placeholder description",
+    "required" : false,
+    "locked" : true,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Select a video type in the sidebar."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "default" : {
+    "placeholder_title" : "No video selected",
+    "placeholder_description" : "Select a video type in the sidebar."
+  }
+} ]
