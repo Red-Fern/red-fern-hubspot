@@ -49,7 +49,7 @@
   "required" : false,
   "locked" : false,
   "display" : "select",
-  "choices" : [ [ "grey-dark", "Black" ], [ "white", "White" ], [ "teal", "Teal" ] ],
+  "choices" : [ [ "grey-dark", "Black" ], [ "white", "White" ], [ "teal-dark", "Dark Teal" ] ],
   "multiple" : false,
   "reordering_enabled" : true,
   "preset" : null,

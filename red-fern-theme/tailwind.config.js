@@ -53,7 +53,7 @@ module.exports = {
       pattern: /text-(2xs|xs|sm|base|md|lg|xl|2xl|3xl)/,
     },
     {
-      pattern: /text-(grey-dark|teal|white)/,
+      pattern: /text-(black|navy|grey-dark|grey-light|grey|teal-dark|teal|off-white|white)/,
     },
     'justify-start',
     'lg:justify-center',
