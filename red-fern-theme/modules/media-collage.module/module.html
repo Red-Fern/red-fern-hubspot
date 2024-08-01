@@ -1,0 +1,22 @@
+<div class="relative">
+    {% for item in module.media %}
+        <div class="{{ loop.first ? 'ml-[15%] w-[77%] aspect-[1/0.75]' : 'mt-[-15%] ml-[5%] w-1/2 aspect-[1/0.7] z-[2]' }} rounded-[10px] overflow-hidden">
+            {% if item.type == 'image' && item.image.src %}
+                {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading|escape_attr }}"' : '' %}
+                
+                <img src="{{ item.image.src|escape_url }}" class="w-full h-full object-cover" alt="{{ item.image.alt|escape_attr }}" {{ loadingAttr }}>
+            {% endif %}
+
+            {% if item.type == 'video' && item.video %}
+                <video class="w-full h-full object-cover" crossorigin="anonymous" playsinline="playsinline" preload="none" loop="" muted="muted" autoplay>
+                    <source src="{{ item.video }}" type="video/mp4" />
+                </video>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+    <div class="absolute top-[35%] left-[5%] w-[15%] aspect-[1/0.25] bg-teal z-[1]"></div>
+    <div class="absolute top-[7%] right-[6%] w-[7%] aspect-[1/0.3] bg-teal blur-[2px] z-[1]"></div>
+    <div class="absolute bottom-[18%] right-[21%] w-[6%] aspect-[1/0.3] bg-[rgba(0,193,175,0.50)] blur-[4px] z-[1]"></div>
+    <div class="absolute bottom-[6%] right-[41%] w-[4%] aspect-[1/0.3] bg-[rgba(0,193,175,0.30)] blur-[5px] z-[1]"></div>
+</div>
