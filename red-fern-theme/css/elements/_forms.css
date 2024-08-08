@@ -1,8 +1,3 @@
-
-.hs-form {
-  padding-top: 20px;
-}
-
 .hs-form label {
   position: absolute;
   top: 1px;
@@ -177,7 +172,7 @@
 
 .hs-form .hs-form-field {
   position: relative;
-  margin-top: 49px;
+  margin-top: 40px;
   font-size: 18px;
 }
 
@@ -185,10 +180,6 @@
 .hs-form .hs-form-field.no-empty > label {
   top: -20px;
   font-size: 12px;
-}
-
-.hs-form .hs-form-field:first-child {
-  margin-top: 0;
 }
 
 /* Layout */
@@ -226,7 +217,7 @@ form fieldset.form-columns-3 .hs-form-field .input {
   form fieldset.form-columns-2,
   form fieldset.form-columns-3 {
     flex-wrap: nowrap;
-    gap: var(--spacing--xs);
+    gap: var(--spacing--sm);
   }
 }
 

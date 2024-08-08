@@ -101,6 +101,9 @@
     .sticky-section > div > .dnd-column:last-child > div {
         @apply p-sm border border-grey rounded-[10px] bg-grey-light lg:sticky lg:top-0 lg:p-md;
     }
+    .case-study-section {
+        @apply rounded-t-[10px];
+    }
     .case-study-section h2 {
         @apply mb-0;
     }
