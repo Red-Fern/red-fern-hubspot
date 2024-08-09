@@ -63,7 +63,13 @@
   {% endif %}
 
   {% if module.video_type == 'file' and module.video_file %}
-    <div class="w-full aspect-[1/0.72] rounded-[10px] overflow-hidden">
+    {% set aspect_ratio = 'aspect-[1/0.72]' %}
+
+    {% if module.size == 'wide' %}
+      {% set aspect_ratio = 'aspect-[1/0.44]' %}
+    {% endif %}
+
+    <div class="w-full {{ aspect_ratio }} rounded-[10px] overflow-hidden">
       <video class="w-full h-full object-cover" crossorigin="anonymous" playsinline="playsinline" preload="none" loop="" muted="muted" autoplay>
         <source src="{{ module.video_file }}" type="video/mp4" />
       </video>

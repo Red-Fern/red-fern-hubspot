@@ -3,7 +3,7 @@
   "name" : "video_type",
   "display_width" : null,
   "label" : "Video type",
-  "help_text" : "<b>File:</b> Upload a video file. The video will be sized and styled to fit the design. \n<br/>\n<b>Embed:</b> Provide an embed URL or code. The video will be sized and styled to HubSpot defaults. \n<br/>\n<b>HubSpot video:</b> Upload a video file. The video will be sized and styled to HubSpot defaults.",
+  "help_text" : "<b>File:</b> Upload a video file. Video will be styled to fit the design with size options. \n<br/>\n<b>Embed:</b> Provide an embed URL or code. Video will be sized and styled to HubSpot defaults. \n<br/>\n<b>HubSpot video:</b> Upload a video file. Video will be sized and styled to HubSpot defaults.",
   "inline_help_text" : "",
   "required" : false,
   "locked" : false,
@@ -280,4 +280,26 @@
     "placeholder_title" : "No video selected",
     "placeholder_description" : "Select a video type in the sidebar."
   }
+}, {
+  "id" : "e276280f-3116-9ce5-e1bb-00679f91fd52",
+  "name" : "size",
+  "display_width" : null,
+  "label" : "Size",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "video_type",
+    "controlling_value_regex" : "file",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "standard", "Standard - 3:4" ], [ "wide", "Wide - 9:4" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "standard"
 } ]
